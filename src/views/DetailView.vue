@@ -17,10 +17,10 @@
   </div>
   
     <div class="flex flex-col items-center justify-center text-center bg-zinc-600 w-1/2 rounded-lg gap-3">
-    <h2 class="texto">El genero es: {{ character.gender }}</h2>
-    <h2 class="texto">Su especie es: {{ character.species }}</h2>
-    <h2 class="texto">Su estatus es: {{ character.status }}</h2>
-    <h2 class="texto">Esta en: {{ character.location.name }}</h2>
+    <h2 class="texto">Their gender is: {{ character.gender }}</h2>
+    <h2 class="texto">Their species is: {{ character.species }}</h2>
+    <h2 class="texto">Currently state: {{ character.status }}</h2>
+    <h2 class="texto">Currently in: {{ character.location.name }}</h2>
     </div>
   
 </div>
@@ -32,7 +32,7 @@
 
 <div class="text-center">
 <router-link :to="'/'">
-<button class=" w-1/3 bg-black rounded-2xl text-white ">Volver</button>
+<button class=" px-5 py-3 bg-black rounded-2xl text-white ">Volver</button>
 </router-link>
 </div>
   </div>

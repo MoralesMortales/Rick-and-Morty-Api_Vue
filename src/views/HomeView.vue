@@ -31,24 +31,31 @@ loadCharacters();
 
 <template>
 
-  <div class="m-8" id="container">
+  <div class="m-8 flex justify-center flex-col" id="container">
 
-    <div class="flex justify-center mt-10 mb-10">
-      <h1 class="text-5xl text-rose-950">Rick and Morty API</h1>
+    <div class="flex justify-center mb-10 py-7 text-nowrap">
+      <h1 class="lg:text-5xl text-2xl md:text-5xl text-rose-950">Rick and Morty API</h1>
     </div>
 
-    <div class="mb-8 grid grid-cols-2 lg:grid-cols-4 gap-12 mx-auto">
+    <div class="mb-8 grid sm:grid-cols-1 sm:items-center sm:justify-items-center md:grid-cols-3 lg:grid-cols-4 gap-12 mx-auto">
     
 
-      <router-link v-for="personaje in character" :key="character.id" class="bg-red-700 flex justify-center text-center rounded-lg  shadow-md" :to="`/${personaje.id}`">
+      <router-link v-for="personaje in character" :key="character.id" class="bg-red-700 flex hover:scale-105 max-w-80 h-full justify-center text-center rounded-lg shadow-black shadow-md" :to="`/${personaje.id}`">
         <card :character="personaje"/>
       </router-link>
     </div>
 
-    <div class="flex flex-row justify-around">
-      <button @click="nextpage" class="p-5 rounded-lg bg-black text-white">Go to next page</button>
-      <span> {{ page }} </span>
-      <button @click="backpage" :disabled="page === 1" class="p-5 rounded-lg bg-black text-white">Go to previous page</button>      
+    <div class="flex flex-row justify-around items-center">
+      <div class="w-1/3 flex justify-center">
+        <button @click="backpage" :disabled="page === 1" class="p-5 rounded-lg bg-black text-white hover:transition hover:bg-slate-800 transition-all">Go to previous page</button>      
+      </div>
+      <div class="w-1/3 flex justify-center">
+        <span class="bg-white rounded-full px-5 py-3"> {{ page }} </span>
+      </div>
+      <div class="w-1/3 flex justify-center ">
+        <button @click="nextpage" class="p-5 rounded-lg bg-black text-white hover:transition hover:bg-slate-800 transition-all">Go to next page</button>
+      </div>
+        
     </div>
 <!-- : para condiciones especiales z para clases de css -->
   </div>
